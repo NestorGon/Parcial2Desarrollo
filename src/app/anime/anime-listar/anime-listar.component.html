@@ -11,9 +11,12 @@
             <div *ngIf="a.score < 4.5">
               <p class="card-text Rojo" >{{a.score}}</p>
             </div>
-            <a class="btn btn-primary">Ver detalle</a>
+            <a class="btn btn-primary" (click)="onSelected(a)">Ver detalle</a>
           </div>
         </div>
       </div>
   </div>
+</div>
+<div *ngIf="selected">
+  <app-anime-detail [animeDetail]="selectedAnime"></app-anime-detail>
 </div>

@@ -10,6 +10,8 @@ import { AnimeService } from '../anime.service';
 export class AnimeListarComponent implements OnInit {
 
   animes: Array<Anime>;
+  selected = false;
+  selectedAnime: Anime;
   constructor(private animeService: AnimeService) { }
 
   ngOnInit() {
@@ -21,5 +23,10 @@ export class AnimeListarComponent implements OnInit {
       .subscribe(animes => {
         this.animes = animes;
       });
+  }
+
+  onSelected(a: Anime): void {
+    this.selected = true;
+    this.selectedAnime = a;
   }
 }

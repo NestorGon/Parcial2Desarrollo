@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <p class="h3 p-3">{{animeDetail.name}}</p>
+  <img class="img-fluid" src={{animeDetail.image}}>
+  <div class="row p-3">
+    <dl>
+      <dt class="bold">Id</dt>
+      <dd>{{animeDetail.id}}</dd>
+      <hr>
+      <dt class="bold">Genero</dt>
+      <dd>{{animeDetail.gender}}</dd>
+      <hr>
+      <dt class="bold">Puntuación</dt>
+      <dd>{{animeDetail.score}}</dd>
+      <hr>
+      <dt class="bold">Plataformas</dt>
+    </dl>
+  </div>
+  <div class="col-6">
+    <table class="table">
+      <thead>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+      </thead>
+      <tbody>
+        <tr class="col border" *ngFor="let p of animeDetail.platforms">
+          <td>{{p.id}}</td>
+          <td>{{p.name}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
